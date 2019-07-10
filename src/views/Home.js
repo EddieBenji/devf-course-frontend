@@ -19,7 +19,11 @@ const ALL_POSTS = gql`
 
 
 function Home() {
-	const { data, loading } = useQuery(ALL_POSTS);
+	const { data, loading, error } = useQuery(ALL_POSTS);
+	if (error) {
+		return <h4>Internal error</h4>;
+	}
+
 	return (
 		<>
 			<Navbar/>
