@@ -1,9 +1,17 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Redirect, Route } from 'react-router-dom';
 import Home from './views/Home';
 import Post from './views/Post';
 import Signup from './views/Signup';
 import Login from './views/Login';
+import isAuthenticated from './utils/isAuthenticated';
+
+function Logout() {
+	localStorage.removeItem('blogToken');
+	return <Redirect to="/login"/>;
+}
+
+const SecureLogout = isAuthenticated(Logout);
 
 function Routes() {
 	return (
@@ -12,6 +20,7 @@ function Routes() {
 			<Route exact path="/post/:id" component={Post}/>
 			<Route exact path="/signup" component={Signup}/>
 			<Route exact path="/login" component={Login}/>
+			<Route exact path="/logout" component={SecureLogout}/>
 		</>
 	);
 }
