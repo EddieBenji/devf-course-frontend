@@ -1,12 +1,11 @@
 import { ApolloClient } from 'apollo-client';
-import { createHttpLink } from 'apollo-link-http';
+import { createUploadLink } from 'apollo-upload-client';
 import { setContext } from 'apollo-link-context';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 
 const API_URL = 'https://backendblog.lalo.now.sh/';
-// const API_URL = 'http://localhost:4000/';
 
-const httpLink = createHttpLink({
+const httpLink = createUploadLink({
 	uri: API_URL
 });
 

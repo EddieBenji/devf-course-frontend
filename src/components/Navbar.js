@@ -25,6 +25,9 @@ function Navbar() {
 										<Link className="nav-link" to="/">Hi {payload().user.email}</Link>
 									</li>
 									<li className="nav-item">
+										<Link className="nav-link" to="/create">Create a post</Link>
+									</li>
+									<li className="nav-item">
 										<Link className="nav-link" to="/logout">Logout</Link>
 									</li>
 								</>

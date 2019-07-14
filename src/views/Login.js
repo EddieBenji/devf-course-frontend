@@ -23,8 +23,7 @@ function Login({ history }) {
 	const submitLogin = async (fields) => {
 		const mutation = await sendLogin({
 			variables: { ...fields }
-		})
-			.catch(e => console.log('Error: ', e));
+		}).catch(e => console.log('Error: ', e));
 		if (mutation) {
 			const { login } = mutation.data;
 			localStorage.setItem('blogToken', login.token);

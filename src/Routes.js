@@ -4,6 +4,7 @@ import Home from './views/Home';
 import Post from './views/Post';
 import Signup from './views/Signup';
 import Login from './views/Login';
+import Create from './views/Create';
 import isAuthenticated from './utils/isAuthenticated';
 
 function Logout() {
@@ -21,6 +22,7 @@ function Routes() {
 			<Route exact path="/signup" component={Signup}/>
 			<Route exact path="/login" component={Login}/>
 			<Route exact path="/logout" component={SecureLogout}/>
+			<Route exact path="/create" component={Create}/>
 		</>
 	);
 }
